@@ -15,6 +15,7 @@ class CompatibleTerraformTemplate(Template):
         cls,
         path: str,
         format: FileFormat = FileFormat.Terraform,
+        include_all_files: bool = False,
     ):
         if format != FileFormat.Terraform:
             raise TemplateFormatNotSupport(path=path, format=format)
@@ -22,29 +23,37 @@ class CompatibleTerraformTemplate(Template):
         source = {}
         if os.path.isdir(path):
             for dirpath, dirnames, filenames in os.walk(path):
-                for filename in filenames:
-                    if filename.endswith(
-                        (
-                            ".tf",
-                            ".tftpl",
-                            ".tfvars",
-                            ".metadata",
-                            ".mappings",
-                            ".conditions",
-                            ".rules",
-                        )
-                    ):
-                        filepath = os.path.join(dirpath, filename)
-                        with open(filepath) as f:
-                            content = f.read()
-                        key = os.path.relpath(filepath, path).replace(os.path.sep, "/")
-                        source[key] = LiteralScalarString(content)
+                filtered_filenames = cls.filter_filenames(filenames, include_all_files)
+                for filename in filtered_filenames:
+                    filepath = os.path.join(dirpath, filename)
+                    with open(filepath) as f:
+                        content = f.read()
+                    key = os.path.relpath(filepath, path).replace(os.path.sep, "/")
+                    source[key] = LiteralScalarString(content)
         else:
             with open(path) as f:
                 content = f.read()
             source["main.tf"] = LiteralScalarString(content)
 
         return cls(source=source)
+
+    @classmethod
+    def filter_filenames(cls, filenames: list, include_all_files: bool) -> list:
+        if include_all_files:
+            return filenames
+        return [
+            filename for filename in filenames if filename.endswith(
+                (
+                    ".tf",
+                    ".tftpl",
+                    ".tfvars",
+                    ".metadata",
+                    ".mappings",
+                    ".conditions",
+                    ".rules",
+                )
+            )
+        ]
 
     def transform(self) -> RosTemplate:
         typer.secho(f"Transforming terraform template to ROS template...")

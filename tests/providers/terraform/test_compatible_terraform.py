@@ -39,3 +39,17 @@ def test_template_with_2_level():
     assert workspace.get("alicloud/main.tf")
     assert workspace.get("alicloud/output.tf")
     assert workspace.get("alicloud/tftpl/backends.tftpl")
+
+
+def test_template_with_include_all_files():
+    path = os.path.join(TERRAFORM_PROVIDER_DIR, "include-local-files")
+    template = CompatibleTerraformTemplate.initialize(path, include_all_files=True)
+    ros_template = template.transform()
+    d = ros_template.as_dict(format=True)
+
+    assert "Workspace" in d
+    workspace = d["Workspace"]
+
+    assert workspace.get("main.tf")
+    assert workspace.get("test.txt")
+    assert workspace.get("charts/example/Chart.yaml")

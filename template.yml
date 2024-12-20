@@ -1,0 +1,54 @@
+ROSTemplateFormatVersion: '2015-09-01'
+Transform: Aliyun::Terraform-v1.5
+Workspace:
+  main.tf: |
+    locals {
+        command  = file ("${path.module}/test.txt")
+      }
+    resource "helm_release" "example" {
+      name       = "my-local-chart"
+      chart      = "./charts/example"
+    }
+    resource "helm_release" "example2" {
+      name       = "my-redis-release"
+      repository = "https://charts.bitnami.com/bitnami"
+      chart      = "redis"
+      version    = "6.0.1"
+
+      values = [
+        "${file("${path.module}/values.yaml")}"
+      ]
+
+      set {
+        name  = "cluster.enabled"
+        value = "true"
+      }
+
+      set {
+        name  = "metrics.enabled"
+        value = "true"
+      }
+
+      set {
+        name  = "service.annotations.prometheus\\.io/port"
+        value = "9127"
+        type  = "string"
+      }
+    }
+    output "content" {
+      value = local.command
+    }
+  charts/example/Chart.yaml: |-
+    apiVersion: v2
+  charts/example/README.md: |-
+    This is a test file.
+  charts/example/templates/deployment.yaml: |-
+    apiVersion: apps/v1
+  charts/example/templates/service.yaml: |-
+    apiVersion: v1
+  charts/example/values.yaml: |-
+    replicaCount: 1
+  test.txt: |
+    Hello, ROS!
+  values.yaml: |-
+    replicaCount: 1
