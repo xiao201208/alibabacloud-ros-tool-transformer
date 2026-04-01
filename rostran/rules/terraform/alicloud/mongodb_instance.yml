@@ -11,15 +11,20 @@ Properties:
   auto_renew_duration:
     Ignore: true
   backup_interval:
-    Ignore: true
+    To: BackupPolicyOptions
+    Type: Map
   backup_period:
-    Ignore: true
+    To: BackupPolicyOptions
+    Type: Map
   backup_retention_period:
-    Ignore: true
+    To: BackupPolicyOptions
+    Type: Map
   backup_retention_policy_on_cluster_deletion:
-    Ignore: true
+    To: BackupPolicyOptions
+    Type: Map
   backup_time:
-    Ignore: true
+    To: BackupPolicyOptions
+    Type: Map
   cloud_disk_encryption_key:
     Ignore: true
   db_instance_class:
@@ -31,7 +36,8 @@ Properties:
   effective_time:
     Ignore: true
   enable_backup_log:
-    Ignore: true
+    To: BackupPolicyOptions
+    Type: Map
   encrypted:
     To: Encrypted
   encryption_key:
@@ -41,7 +47,8 @@ Properties:
   engine_version:
     To: EngineVersion
   force_encryption:
-    Ignore: true
+    To: SSLOptions
+    Type: Map
   global_security_group_list:
     Ignore: true
   hidden_zone_id:
@@ -53,7 +60,8 @@ Properties:
   kms_encryption_context:
     Ignore: true
   log_backup_retention_period:
-    Ignore: true
+    To: BackupPolicyOptions
+    Type: Map
   maintain_end_time:
     Ignore: true
   maintain_start_time:
@@ -93,11 +101,13 @@ Properties:
   security_ip_list:
     To: SecurityIPArray
   snapshot_backup_type:
-    Ignore: true
+    To: BackupPolicyOptions
+    Type: Map
   src_db_instance_id:
     To: SrcDBInstanceId
   ssl_action:
-    Ignore: true
+    To: SSLOptions
+    Type: Map
   ssl_status:
     Ignore: true
   storage_engine:

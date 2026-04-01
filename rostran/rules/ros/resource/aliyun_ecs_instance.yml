@@ -117,7 +117,7 @@ Properties:
   PasswordInherit:
     To: password_inherit
   ImageFamily:
-    Ignore: true
+    To: image_options
   StorageSetId:
     To: system_disk_storage_cluster_id
   AutoRenew:

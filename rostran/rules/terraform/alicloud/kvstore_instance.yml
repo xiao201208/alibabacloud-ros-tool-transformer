@@ -29,7 +29,8 @@ Properties:
   connection_domain:
     Ignore: true
   connection_string:
-    Ignore: true
+    To: Connections
+    Type: Map
   connection_string_prefix:
     Ignore: true
   coupon_no:

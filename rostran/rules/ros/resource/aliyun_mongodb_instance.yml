@@ -78,15 +78,19 @@ Properties:
   ClusterId:
     Ignore: true
   SSLOptions:
-    Ignore: true
+    To: force_encryption
   AuditPolicyOptions:
     Ignore: true
   SrcRegion:
     Ignore: true
   BackupPolicyOptions:
-    Ignore: true
+    To: backup_interval
   RestoreType:
     Ignore: true
+  BackupPolicyOptions$$0:
+    To: snapshot_backup_type
+  SSLOptions$$0:
+    To: ssl_action
 Attributes:
   DBInstanceId:
     To: id

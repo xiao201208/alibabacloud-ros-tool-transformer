@@ -58,7 +58,7 @@ Properties:
   InstanceMaintainTime:
     To: maintain_end_time
   Connections:
-    Ignore: true
+    To: connection_string
   BackupPolicy:
     Ignore: true
   InstanceClass$$0:

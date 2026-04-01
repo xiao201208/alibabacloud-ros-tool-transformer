@@ -1,0 +1,32 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_log_ingestion
+  To: ALIYUN::SLS::Etl
+Properties:
+  description:
+    To: Description
+  display_name:
+    To: DisplayName
+  ingestion_name:
+    To: Name
+  interval:
+    To: Schedule
+    Type: Map
+  logstore:
+    To: Configuration
+    Type: Map
+  project:
+    To: ProjectName
+  run_immediately:
+    To: Schedule
+    Type: Map
+  source:
+    To: Configuration
+    Type: Map
+  time_zone:
+    To: Configuration
+    Type: Map
+Attributes:
+  id:
+    To: Name

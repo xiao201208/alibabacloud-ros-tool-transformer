@@ -19,3 +19,5 @@ Attributes:
     To: group_type
   InstanceId:
     To: instance_id
+  GroupId$$0:
+    To: group_id

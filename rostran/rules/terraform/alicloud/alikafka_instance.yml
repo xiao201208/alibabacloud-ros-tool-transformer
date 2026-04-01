@@ -55,7 +55,8 @@ Properties:
   security_group:
     Ignore: true
   selected_zones:
-    Ignore: true
+    To: DeployOption
+    Type: Map
   serverless_config:
     To: ServerlessConfig
     Type: Map
@@ -82,13 +83,17 @@ Properties:
   topic_used:
     Ignore: true
   vpc_id:
-    Ignore: true
+    To: DeployOption
+    Type: Map
   vswitch_id:
-    Ignore: true
+    To: DeployOption
+    Type: Map
   vswitch_ids:
-    Ignore: true
+    To: DeployOption
+    Type: Map
   zone_id:
-    Ignore: true
+    To: DeployOption
+    Type: Map
 Attributes:
   id:
     To: InstanceId

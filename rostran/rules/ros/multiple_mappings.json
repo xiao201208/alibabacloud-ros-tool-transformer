@@ -926,5 +926,85 @@
     ],
     "TerraformResourceTypeInRuleFile": "alicloud_kms_instance",
     "CorrectTerraformResourceType": "alicloud_kms_instance"
+  },
+  "ALIYUN::BastionHost::HostAccount": {
+    "TerraformResourceTypes": [
+      "alicloud_bastionhost_host_account",
+      "alicloud_bastionhost_host_share_key"
+    ],
+    "TerraformResourceTypeInRuleFile": "alicloud_bastionhost_host_account",
+    "CorrectTerraformResourceType": ""
+  },
+  "ALIYUN::CEN::InterRegionTrafficQosPolicy": {
+    "TerraformResourceTypes": [
+      "alicloud_cen_inter_region_traffic_qos_policy",
+      "alicloud_cen_traffic_marking_policy"
+    ],
+    "TerraformResourceTypeInRuleFile": "alicloud_cen_inter_region_traffic_qos_policy",
+    "CorrectTerraformResourceType": ""
+  },
+  "ALIYUN::RDS::DBProxy": {
+    "TerraformResourceTypes": [
+      "alicloud_db_read_write_splitting_connection",
+      "alicloud_rds_db_proxy"
+    ],
+    "TerraformResourceTypeInRuleFile": "alicloud_rds_db_proxy",
+    "CorrectTerraformResourceType": ""
+  },
+  "ALIYUN::DDoSPro::WebRule": {
+    "TerraformResourceTypes": [
+      "alicloud_ddoscoo_domain_resource",
+      "alicloud_ddoscoo_web_cc_rule"
+    ],
+    "TerraformResourceTypeInRuleFile": "alicloud_ddoscoo_domain_resource",
+    "CorrectTerraformResourceType": ""
+  },
+  "ALIYUN::ESA::WafRule": {
+    "TerraformResourceTypes": [
+      "alicloud_esa_waf_rule",
+      "alicloud_esa_waf_ruleset"
+    ],
+    "TerraformResourceTypeInRuleFile": "alicloud_esa_waf_rule",
+    "CorrectTerraformResourceType": ""
+  },
+  "ALIYUN::GPDB::StreamingDataService": {
+    "TerraformResourceTypes": [
+      "alicloud_gpdb_streaming_data_service",
+      "alicloud_gpdb_streaming_job"
+    ],
+    "TerraformResourceTypeInRuleFile": "alicloud_gpdb_streaming_data_service",
+    "CorrectTerraformResourceType": ""
+  },
+  "ALIYUN::OSS::BucketPublicAccessBlock": {
+    "TerraformResourceTypes": [
+      "alicloud_oss_account_public_access_block",
+      "alicloud_oss_bucket_public_access_block"
+    ],
+    "TerraformResourceTypeInRuleFile": "alicloud_oss_bucket_public_access_block",
+    "CorrectTerraformResourceType": ""
+  },
+  "ALIYUN::RAM::SecurityPreference": {
+    "TerraformResourceTypes": [
+      "alicloud_ram_password_policy",
+      "alicloud_ram_security_preference"
+    ],
+    "TerraformResourceTypeInRuleFile": "alicloud_ram_security_preference",
+    "CorrectTerraformResourceType": ""
+  },
+  "ALIYUN::ROCKETMQ5::Acl": {
+    "TerraformResourceTypes": [
+      "alicloud_rocketmq_account",
+      "alicloud_rocketmq_acl"
+    ],
+    "TerraformResourceTypeInRuleFile": "alicloud_rocketmq_acl",
+    "CorrectTerraformResourceType": ""
+  },
+  "ALIYUN::CAS::SslCertificate": {
+    "TerraformResourceTypes": [
+      "alicloud_ssl_certificates_service_pca_cert",
+      "alicloud_ssl_certificates_service_pca_certificate"
+    ],
+    "TerraformResourceTypeInRuleFile": "alicloud_ssl_certificates_service_pca_certificate",
+    "CorrectTerraformResourceType": ""
   }
 }

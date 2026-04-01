@@ -32,6 +32,8 @@ Properties:
     Ignore: true
   LogPlan:
     Ignore: true
+  Options$$0:
+    To: timeout_in_seconds
 Attributes:
   PlanId:
     To: plan_id

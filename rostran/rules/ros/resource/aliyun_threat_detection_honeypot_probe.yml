@@ -1,0 +1,53 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ThreatDetection::HoneypotProbe
+  To: alicloud_threat_detection_honeypot_probe
+Properties:
+  Arp:
+    To: arp
+  ControlNodeId:
+    To: control_node_id
+  DisplayName:
+    To: display_name
+  HoneypotBindList:
+    To: honeypot_bind_list
+  Ping:
+    To: ping
+  ProbeType:
+    To: probe_type
+  ProbeVersion:
+    To: probe_version
+  ProxyIp:
+    To: proxy_ip
+  ServiceIpList:
+    To: service_ip_list
+  Uuid:
+    To: uuid
+  VpcId:
+    To: vpc_id
+  BusinessGroupId:
+    Ignore: true
+Attributes:
+  Uuid:
+    To: id
+  HoneypotProbeId:
+    To: honeypot_probe_id
+  ServiceIpList:
+    To: service_ip_list
+  ControlNodeId:
+    Ignore: true
+  ProbeVersion:
+    Ignore: true
+  Ping:
+    Ignore: true
+  DisplayName:
+    Ignore: true
+  Arp:
+    Ignore: true
+  HoneypotBindList:
+    Ignore: true
+  ProbeType:
+    Ignore: true
+  VpcId:
+    Ignore: true

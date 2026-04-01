@@ -7,5 +7,7 @@ Properties:
   BucketName:
     To: bucket
   ReplicationConfiguration:
-    Ignore: true
+    To: action
+  ReplicationConfiguration$$0:
+    To: sync_role
 Attributes: {}

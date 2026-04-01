@@ -46,4 +46,4 @@ Properties:
     To: SlsGroupName
 Attributes:
   id:
-    Ignore: true
+    To: SlsGroupName

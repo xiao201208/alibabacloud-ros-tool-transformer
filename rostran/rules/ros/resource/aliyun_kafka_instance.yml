@@ -38,9 +38,11 @@ Properties:
   OpenConnector:
     Ignore: true
   DeployOption:
-    Ignore: true
+    To: selected_zones
   DeletionForce:
     Ignore: true
+  DeployOption$$0:
+    To: zone_id
 Attributes:
   InstanceId:
     To: id

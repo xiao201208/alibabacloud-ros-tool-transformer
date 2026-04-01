@@ -11,11 +11,13 @@ Properties:
   alert_policy_id:
     Ignore: true
   annotations:
-    Ignore: true
+    To: Detail
+    Type: Map
   chart_title:
     Ignore: true
   condition:
-    Ignore: true
+    To: Detail
+    Type: Map
   configuration:
     To: Detail
     Type: Map
@@ -65,7 +67,8 @@ Properties:
       version:
         Ignore: true
   count_condition:
-    Ignore: true
+    To: Detail
+    Type: Map
   create_time:
     Ignore: true
   dashboard_id:
@@ -81,15 +84,24 @@ Properties:
   endpoint:
     Ignore: true
   eval_condition:
-    Ignore: true
+    To: Detail
+    Type: Map
+    Schema:
+      condition:
+        Ignore: true
+      count_condition:
+        Ignore: true
   event_store:
     Ignore: true
   fields:
-    Ignore: true
+    To: Detail
+    Type: Map
   key:
-    Ignore: true
+    To: Detail
+    Type: Map
   lang:
-    Ignore: true
+    To: Detail
+    Type: Map
   power_sql_mode:
     Ignore: true
   project:
@@ -131,19 +143,24 @@ Properties:
   store_type:
     Ignore: true
   template_id:
-    Ignore: true
+    To: Detail
+    Type: Map
   time_span_type:
     Ignore: true
   tokens:
-    Ignore: true
+    To: Detail
+    Type: Map
   type:
-    Ignore: true
+    To: Detail
+    Type: Map
   ui:
     Ignore: true
   value:
-    Ignore: true
+    To: Detail
+    Type: Map
   version:
-    Ignore: true
+    To: Detail
+    Type: Map
 Attributes:
   id:
     Ignore: true

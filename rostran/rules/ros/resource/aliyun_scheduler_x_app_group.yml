@@ -36,4 +36,4 @@ Properties:
     Ignore: true
 Attributes:
   AppGroupId:
-    Ignore: true
+    To: id

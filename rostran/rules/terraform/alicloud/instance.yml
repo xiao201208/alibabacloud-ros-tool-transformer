@@ -73,7 +73,10 @@ Properties:
   image_id:
     To: ImageId
   image_options:
-    Ignore: true
+    To: ImageFamily
+    Schema:
+      login_as_non_root:
+        Ignore: true
   include_data_disks:
     Ignore: true
   instance_charge_type:

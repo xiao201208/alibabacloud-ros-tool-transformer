@@ -54,7 +54,7 @@ Properties:
   nat_gateway_id:
     Ignore: true
   new_nat_gateway:
-    Ignore: true
+    To: SnatEntry
   node_cidr_mask:
     To: NodeCidrMask
   password:

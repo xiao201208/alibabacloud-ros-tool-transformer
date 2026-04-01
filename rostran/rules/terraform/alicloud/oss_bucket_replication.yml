@@ -5,24 +5,54 @@ ResourceType:
   To: ALIYUN::OSS::BucketReplication
 Properties:
   action:
-    Ignore: true
+    To: ReplicationConfiguration
+    Type: Map
   bucket:
     To: BucketName
   destination:
-    Ignore: true
+    To: ReplicationConfiguration
+    Type: Map
+    Schema:
+      bucket:
+        Ignore: true
+      location:
+        Ignore: true
+      transfer_type:
+        Ignore: true
   encryption_configuration:
-    Ignore: true
+    To: ReplicationConfiguration
+    Type: Map
+    Schema:
+      replica_kms_key_id:
+        Ignore: true
   historical_object_replication:
-    Ignore: true
+    To: ReplicationConfiguration
+    Type: Map
   prefix_set:
-    Ignore: true
+    To: ReplicationConfiguration
+    Type: Map
+    Schema:
+      prefixes:
+        Ignore: true
   progress:
     Ignore: true
   rtc:
-    Ignore: true
+    To: ReplicationConfiguration
+    Type: Map
+    Schema:
+      enabled:
+        Ignore: true
+      status:
+        Ignore: true
   source_selection_criteria:
-    Ignore: true
+    To: ReplicationConfiguration
+    Type: Map
+    Schema:
+      sse_kms_encrypted_objects:
+        Ignore: true
   status:
-    Ignore: true
+    To: ReplicationConfiguration
+    Type: Map
   sync_role:
-    Ignore: true
+    To: ReplicationConfiguration
+    Type: Map

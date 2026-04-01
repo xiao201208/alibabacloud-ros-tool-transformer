@@ -48,7 +48,7 @@ Attributes:
   HealthCheckFailTimes:
     Ignore: true
   EdgeContainerAppName:
-    Ignore: true
+    To: id
   HealthCheckMethod:
     Ignore: true
   TargetPort:

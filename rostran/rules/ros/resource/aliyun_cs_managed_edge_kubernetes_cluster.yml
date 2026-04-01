@@ -46,7 +46,7 @@ Properties:
   CloudMonitorFlags:
     To: install_cloud_monitor
   SnatEntry:
-    Ignore: true
+    To: new_nat_gateway
   TimeoutMins:
     Ignore: true
   MaintenanceWindow:
