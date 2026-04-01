@@ -2,7 +2,7 @@ Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: ALIYUN::DDoSPro::WebRule
-  To: alicloud_ddoscoo_domain_resource
+  To: alicloud_ddoscoo_web_cc_rule
 Properties:
   Domain:
     To: domain
@@ -22,4 +22,4 @@ Properties:
     To: real_servers
 Attributes:
   Domain:
-    Ignore: true
+    To: id
