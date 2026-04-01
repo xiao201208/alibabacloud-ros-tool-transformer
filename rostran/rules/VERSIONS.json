@@ -1,6 +1,11 @@
 {
-  "latest": "1.0.3",
+  "latest": "1.0.4",
   "versions": {
+    "1.0.4": {
+      "commit": "b6b0f40053d139a8d59529564b8d0d0d4080debf",
+      "date": "2026-04-01",
+      "description": ""
+    },
     "1.0.3": {
       "commit": "8fd5620fb703c4b4b58bb13986c38c0dc481a47f",
       "date": "2026-04-01",
