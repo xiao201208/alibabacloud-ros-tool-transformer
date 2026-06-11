@@ -12,7 +12,7 @@ Template Transformer is a tool for transforming and formatting.
 
 ## Requirements
 
-- Python 3.7+
+- Python 3.9+ (tested with Python 3.9 through 3.14)
 
 ## Installation
 
@@ -23,5 +23,5 @@ pip install alibabacloud-ros-tran
 ## Document
 
 Fantastic documentation is available at:
-[English](https://aliyun.github.io/alibabacloud-ros-tool-transformer) |
-[中文版](https://aliyun.github.io/alibabacloud-ros-tool-transformer/#/zh-cn/).
+[English](https://aliyun.github.io/alibabacloud-ros-tool-transformer/) |
+[中文版](https://aliyun.github.io/alibabacloud-ros-tool-transformer/zh-cn/).
