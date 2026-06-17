@@ -1,3 +1,5 @@
+from typing import Optional
+
 from .exceptions import InvalidTemplateOutput, InvalidTemplateOutputs
 
 
@@ -9,7 +11,12 @@ class Output:
     )
 
     def __init__(
-        self, name, value, description=None, condition=None, orig_data: dict = None
+        self,
+        name,
+        value,
+        description=None,
+        condition=None,
+        orig_data: Optional[dict] = None,
     ):
         self.name = name
         self.value = value
@@ -37,7 +44,7 @@ class Output:
         if not isinstance(self.name, str):
             raise InvalidTemplateOutput(
                 name=self.name,
-                reason=f"The type should be str",
+                reason="The type should be str",
             )
         if self.value is None:
             raise InvalidTemplateOutput(

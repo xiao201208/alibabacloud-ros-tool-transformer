@@ -1,6 +1,6 @@
 import logging
 import os
-from typing import Dict
+from typing import Dict, Optional
 
 import typer
 from ruamel.yaml import YAML
@@ -28,11 +28,11 @@ class RuleManager:
     def __init__(
         self,
         rule_classifier: str,
-        resource_rules: Dict[str, "ResourceRule"] = None,
-        pseudo_parameters_rule: "PseudoParametersRule" = None,
-        function_rule: "FunctionRule" = None,
-        meta_data_rule: "MetaDataRule" = None,
-        association_property_rule: "AssociationPropertyRule" = None,
+        resource_rules: Optional[Dict[str, "ResourceRule"]] = None,
+        pseudo_parameters_rule: Optional["PseudoParametersRule"] = None,
+        function_rule: Optional["FunctionRule"] = None,
+        meta_data_rule: Optional["MetaDataRule"] = None,
+        association_property_rule: Optional["AssociationPropertyRule"] = None,
     ):
         self.rule_classifier = rule_classifier
         self.resource_rules = resource_rules or {}
@@ -261,7 +261,7 @@ class ResourceRule(Rule):
         attributes,
         target_resource_type=None,
         handler=None,
-        built_in_properties=None
+        built_in_properties=None,
     ):
         super().__init__(version, type, rule_id)
         self.properties = properties
@@ -299,7 +299,7 @@ class ResourceRule(Rule):
             attributes,
             target_resource_type,
             handler_func,
-            built_in_properties
+            built_in_properties,
         )
 
 

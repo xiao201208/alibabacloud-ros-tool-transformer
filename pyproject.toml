@@ -49,9 +49,15 @@ rostran = "rostran.cli.__main__:main"
 binary = [
     "pyinstaller==6.11.1",
 ]
+serve = [
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.29.0",
+    "python-multipart>=0.0.9",
+]
 dev = [
     "pytest",
-    "autopep8",
+    "ruff",
+    "ty",
     "pre-commit",
     "twine",
     "wheel",
@@ -60,9 +66,12 @@ dev = [
     "beautifulsoup4",
     "aliyun-python-sdk-core",
     "aliyun-python-sdk-ros",
-    "black",
     "pyyaml",
     "jsonref",
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.29.0",
+    "python-multipart>=0.0.9",
+    "httpx",
 ]
 
 [tool.setuptools.dynamic]
@@ -70,3 +79,17 @@ version = { attr = "rostran.__version__" }
 
 [tool.setuptools.packages.find]
 exclude = ["tests*"]
+
+[tool.setuptools.package-data]
+"rostran.web" = ["static/**/*", "static/*"]
+
+[tool.ruff]
+target-version = "py39"
+
+[tool.ruff.lint.per-file-ignores]
+# Re-exports in package __init__.py files are intentional.
+"__init__.py" = ["F401"]
+
+[tool.ty.src]
+# Packaging/build scripts rely on build-time-only or optional-extra imports.
+exclude = ["tests", "templates", "terraform", "tools", "website", "build", "setup.py", "build.py"]

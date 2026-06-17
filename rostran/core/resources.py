@@ -1,4 +1,4 @@
-from typing import Union
+from typing import Any, Dict, Optional, Union
 
 from openpyxl.cell.cell import Cell
 
@@ -31,13 +31,13 @@ class Resource:
     def __init__(
         self,
         resource_id: str,
-        resource_type: str,
-        properties: Properties = None,
-        depends_on: Union[str, list] = None,
-        condition: str = None,
-        deletion_policy: str = None,
-        metadata: dict = None,
-        other_properties: dict = None,
+        resource_type: Optional[str],
+        properties: Optional[Properties] = None,
+        depends_on: Optional[Union[str, list]] = None,
+        condition: Optional[str] = None,
+        deletion_policy: Optional[str] = None,
+        metadata: Optional[dict] = None,
+        other_properties: Optional[dict] = None,
     ):
         self.resource_id = resource_id
         self.type = resource_type
@@ -97,22 +97,22 @@ class Resource:
         if not isinstance(self.resource_id, str):
             raise InvalidTemplateResource(
                 name=self.resource_id,
-                reason=f"The type should be str",
+                reason="The type should be str",
             )
         if not self.resource_id:
             raise InvalidTemplateResource(
                 name=self.resource_id,
-                reason=f"ResourceId should not be empty",
+                reason="ResourceId should not be empty",
             )
         if not isinstance(self.type, str):
             raise InvalidTemplateResource(
                 name=self.resource_id,
-                reason=f"The type should be str",
+                reason="The type should be str",
             )
         if not self.type:
             raise InvalidTemplateResource(
                 name=self.type,
-                reason=f"ResourceType should not be empty",
+                reason="ResourceType should not be empty",
             )
         if self.depends_on is not None and not isinstance(self.depends_on, (str, list)):
             raise InvalidTemplateResource(
@@ -140,7 +140,7 @@ class Resource:
             )
 
     def as_dict(self, format=False):
-        data = {Resource.TYPE: self.type}
+        data: Dict[str, Any] = {Resource.TYPE: self.type}
         if self.condition:
             data[Resource.CONDITION] = self.condition
         data[Resource.PROPERTIES] = self.properties.as_dict(format=format)
